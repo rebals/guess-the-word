@@ -11,7 +11,7 @@ let word = "magnolia";
 
 let guessedLetters = [];
 
-let remainingGuesses = 8;
+let remainingGuesses = 10;
 
 const getWord = async function(){
     const res = await fetch("https://gist.githubusercontent.com/skillcrush-curriculum/7061f1d4d3d5bfe47efbfbcfe42bf57e/raw/5ffc447694486e7dea686f34a6c085ae371b43fe/words.txt");
@@ -52,7 +52,7 @@ guessButton.addEventListener("click", function(e){
 });
 
 const validateInput = function(input){
-    const acceptedLetter = /[a-zA-Z]/
+    const acceptedLetter = /[a-zA-Z]/;
     if (input.length === 0){
         message.innerText = "You need to pick a letter."; 
     } else if (input.length > 1) {
@@ -68,10 +68,10 @@ const makeGuess = function(guess){
     guess = guess.toUpperCase ();
 
     if (guessedLetters.includes(guess)){
-        message.innerText = "You already guessed that letter, silly. Try Again.";
+        message.innerText = "Seriously, you already guessed that letter. Try Again.";
     } else {
         guessedLetters.push(guess);
-        console.log(guessedLetters);
+        // console.log(guessedLetters);
         updateGuessesRemaining(guess);
         showGuessedLetters();
         updateWordInProgress(guessedLetters);
