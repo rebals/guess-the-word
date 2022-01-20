@@ -46,7 +46,7 @@ guessButton.addEventListener("click", function(e){
     
     const goodGuess = validateInput(guess);
 
-     (goodGuess){
+    if (goodGuess){
         makeGuess(guess);
     }
 });
